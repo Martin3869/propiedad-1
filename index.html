@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedad - Av. Néstor Kirchner 3297</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.css" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f2ff; /* Fondo azul claro */
+            color: #003366; /* Texto azul oscuro */
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: bold;
+        }
+        .container {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+        .property-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .property-details img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .contact {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .contact strong {
+            font-size: 1.2em;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #003366;
+            font-weight: bold;
+        }
+        .advantages {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #cce6ff;
+            border-radius: 10px;
+        }
+        .advantages ul {
+            padding-left: 20px;
+        }
+        .advantages ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Propiedad en Alquiler - Av. Néstor Kirchner 3297</h1>
+    </div>
+    <div class="container">
+        <div class="property-details">
+            <p class="section-title">Detalles de la Propiedad</p>
+            
+            <p><strong>Ubicación Estratégica:</strong> Esquina privilegiada sobre Avenida Néstor Kirchner, cerca del Hipermercado Libertad y con acceso a 8 líneas de transporte público.</p>
+            <p><strong>Superficie total:</strong> 200 m²</p>
+            <p><strong>Superficie cubierta:</strong> 88.65 m²</p>
+            <ul>
+                <li>Baño: 3.25 m²</li>
+                <li>Sector 1: 22.40 m²</li>
+                <li>Sector 2: 30.00 m²</li>
+                <li>Sector 3: 33.00 m²</li>
+                <li><strong>Precio total superficie cubierta:</strong> 91,186 USD</li>
+            </ul>
+            <p><strong>Superficie descubierta:</strong> 111.60 m²</p>
+            <ul>
+                <li>Galería Oeste: 4.20 m²</li>
+                <li>Patio Central: 62.40 m²</li>
+                <li>Galería/Cochera: 45.00 m²</li>
+                <li><strong>Precio total superficie descubierta:</strong> 76,520 USD</li>
+            </ul>
+            <p><strong>Precio total de la propiedad:</strong> 167,706 USD</p>
+            <p class="section-title">Mapa de la Ubicación</p>
+            <div id="map"></div>
+        </div>
+        <div class="advantages">
+            <p class="section-title">Ventajas de la Ubicación</p>
+            <ul>
+                <li>Conectividad excepcional: Más de 8 líneas de transporte público transitan la avenida cada 30 minutos.</li>
+                <li>Entorno comercial dinámico: Proximidad al Hipermercado Libertad y otros centros de consumo.</li>
+                <li>Alta visibilidad: Flujo constante de vehículos y peatones garantiza exposición.</li>
+                <li>Accesibilidad: Ubicada en una arteria principal de San Miguel de Tucumán.</li>
+                <li>Potencial comercial: Ideal para actividades comerciales y oficinas por su ubicación estratégica.</li>
+            </ul>
+        </div>
+        <div class="contact">
+            <p><strong>Contacto del Administrador:</strong></p>
+            <p>Daniel Martín Contreras</p>
+            <p>Teléfono: 381-3012805</p>
+            <p>Email: martin3869@hotmail.com</p>
+        </div>
+    </div>
+
+    <script>
+        // Inicialización del mapa con capa satelital
+        const map = L.map('map').setView([-26.83457131539304, -65.25046977316624], 15); // Coordenadas actualizadas
+        L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            maxZoom: 20,
+        }).addTo(map);
+        
+        L.marker([-26.83457131539304, -65.25046977316624]).addTo(map)
+            .bindPopup('Av. Néstor Kirchner 3297')
+            .openPopup();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
